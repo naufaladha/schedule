@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="schedulestyle.css">
+
+		<title>Schedule</title>
+	</head>
+	<body>	
+		<header>
+			<nav>				
+				<h1>MySchedule</h1>
+				<ul>
+															
+					<div class="bubble"></div>
+				</ul>
+			</nav>
+		</header>		
+		<main>
+			<section data-index="0" id="home">
+				<h1>To Do List</h1>
+				<div class="first-page">
+					<input type="text" name="ToDo" id="input" autocomplete="off" required onkeydown="makeList(this)">
+					<label for="ToDo" class="label-ToDo">
+						<span class="content-ToDo">Masukkan daftar schedule anda</span>
+					</label>										
+				</div>
+			</section>
+			<section data-index="1" id="daftar-Kegiatan">
+				<h2>Daftar Schedule</h2>
+				<ul id="list-kegiatan" class="myList"></ul>	
+				<!-- modal pop up-->
+				<div id="myModal" class="modal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <p class="modal-title">Ta</p>								 
+						</div>
+						<div class="modal-body">
+							<input type="text" id="inputEdit" autocomplete="off" required>							
+						</div>
+						<div class="modal-footer">						
+						  <button type="button" id="saveBtn" class="btn btn-primary">Simpan</button>
+						</div>
+					  </div>
+					</div>
+				  </div>	
+			</section>			
+		</main>
+
+		<script src="scheduleapp.js"></script>		
+	</body>
+</html>

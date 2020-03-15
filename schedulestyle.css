@@ -1,0 +1,241 @@
+*{      
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;     
+}
+
+header{
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0px;
+    background-image: linear-gradient(120deg, #a6fead 0%, #80b7f6 100%);  
+    z-index: 1;
+}
+
+nav{
+    min-height: 10vh;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1, nav ul{
+    font-size: 2vw;
+    flex: 1;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;    
+}
+
+nav a, a:hover{        
+    color: black;
+    text-decoration: none;
+}
+
+
+section {
+    min-height: 100vh;    
+    padding: 30px 40px;    
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  /* Clear floats after the section */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+section h2{
+    font-size: 4vw;        
+    padding-top: 80px;     
+}
+
+#home{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+    font-family: sans-serif;
+    flex-direction: column;   
+}
+
+#home h1{
+    font-size: 10vw;
+    color: black;             
+}
+
+#home{
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+}
+
+#daftar-Kegiatan{
+    background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);    
+}
+
+.bubble{
+    position: absolute;    
+    z-index: -2;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    transform: scale(2);
+    transition: all 0.5s ease;
+}
+
+#list-kegiatan{
+    margin: 0;
+    padding: 0;   
+}
+
+#list-kegiatan li{    
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 3vw;
+    transition: 0.2s;
+   
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;      
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+#list-kegiatan li:nth-child(odd) {
+    background: #f9f9f9;
+}
+  
+  /* Darker background-color on hover */
+#list-kegiatan li:hover {
+    background: #ddd;
+}
+  
+  /* When clicked on, add a background color and strike out text */
+#list-kegiatan li.checked {
+    background: rgb(136, 136, 136);
+    color: #fff;
+    text-decoration: line-through;
+}
+  
+/* Add a "checked" mark when clicked on */
+#list-kegiatan li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+  
+  /* Style the close button */
+.trash {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 15px 16px;
+}
+  
+.trash:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    padding: 12px 16px 15px 16px;
+}
+
+.edit:hover {
+    background-color: black;
+    color: white;
+}
+
+.first-page{
+    width: 50%;
+    position: relative;
+    height: 50px; 
+    overflow: hidden;        
+}
+
+.first-page input{
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding-top: 20px;
+    border: none;
+    outline: none;   
+    background-color: transparent;     
+}
+
+.first-page label{
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;  
+    font-size: 2vw;  
+}
+
+.first-page label::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -3px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid gray;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;        
+}
+
+.content-ToDo{
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    transition: all 0.3s ease;  
+}
+
+.first-page input:focus + .label-ToDo .content-ToDo,
+.first-page input:valid + .label-ToDo .content-ToDo {
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: gray;
+}
+
+.first-page input:focus + .label-ToDo::after,
+.first-page input:valid + .label-ToDo::after{
+    transform: translateX(0%);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
